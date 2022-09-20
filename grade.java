@@ -1,40 +1,57 @@
-import java.util.Scanner;
+import java.util.*;
+class grade
+	{
+    public static void main(String[] args) {
+        try {
+            float m1, m2, m3, m4;
+            Scanner sc = new Scanner(System.in);
+            System.out.println("enter marks in python:");
+            m1 = sc.nextFloat();
+            System.out.println("enter marks in c programming:");
+            m2 = sc.nextFloat();
+            System.out.println("enter marks in mathematics:");
+            m3 = sc.nextFloat();
+            System.out.println("enter marks in physics:");
+            m4 = sc.nextFloat();
+            if (m1 > 100  || m2 > 100 || m3 > 100 || m4 > 100)
+            {
+                throw new NullPointerException("invalid due to higher values.");
+            }
+            if (m1 <0  || m2 <0 || m3 <0 || m4 <0)
+            {
+                throw new ArithmeticException("invalid due to higher values.");
+            }
 
-class income
-{
-    public static void main(String args[])
-    {
-    	
-        int marks[] = new int[4];
-        int i;
-        float total=0, avg;
-        Scanner scanner = new Scanner(System.in);
-		
-        
-        for(i=0; i<4; i++) { 
-           System.out.print("Enter Marks of Subject"+(i+1)+":");
-           marks[i] = scanner.nextInt();
-           total = total + marks[i];
+
+            float total=m1+m2+m3+m4;
+            float agg=total/4;
+            System.out.println("TOTAL= " + total);
+            System.out.println("Aggregate=" + agg);
+
+            if(agg>75)
+            {
+                System.out.println("DISTINCTION");
+            }
+            else if(agg>=60 && agg<75)
+            {
+                System.out.println("FIRST DIVISION");
+            }
+            else if(agg>=50 && agg<60)
+            {
+                System.out.println("SECOND DIVISION");
+            }
+            else if(agg>=40 && agg<50)
+            {
+                System.out.println("THIRD DIVISION");
+            }
+            else
+            {
+                System.out.println("FAIL");
+            }
         }
-        scanner.close();
- 
-        avg = total/4;
-        System.out.print("The student Grade is: ");
-        if(avg>=75)
+        catch(Exception e)
         {
-            System.out.print("Distinction");
-        }
-        else if(avg>=60 && avg<75)
-        {
-           System.out.print("First division");
-        } 
-        else if(avg>=50 && avg<60)
-        {
-            System.out.print("second devision");
-        }
-        else
-        {
-            System.out.print("Fail");
+            System.out.println("Enter the valid mark");
         }
     }
 }
