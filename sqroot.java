@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class persqr
+class rootsq
 {
 public static void main(String[] args)
 {
@@ -22,21 +22,15 @@ if(n<=0)
 
 else
 {
-  System.out.println("The square root of "+ n+ " is: "+squareRoot(n)+"and"+"-"+squareRoot(n));
+  double x = Math.sqrt(n);   
+  if(x == (int)x) 
+    {
+     System.out.print("square root of perfefect square:" +x);
+     System.out.print(", -" +x);
+}
+  else
+   {
+   System.out.println("please enter perfect square number");
 }
 }
-
-public static double squareRoot(int num)
-{
-
-double t;
-double sqrtroot=num/2;
-do
-{
-t=sqrtroot;
-sqrtroot=(t+(num/t))/2;
-}
-while((t-sqrtroot)!= 0);
-return sqrtroot;
-}
-}
+}}
