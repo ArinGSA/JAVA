@@ -1,6 +1,6 @@
 import java.util.Scanner;
  
-class 123pat
+class pat
 {
     public static void main(String[] args) 
     {
